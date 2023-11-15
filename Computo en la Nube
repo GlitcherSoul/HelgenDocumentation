@@ -1,0 +1,57 @@
+Modulo de Computo en la Nube.
+_____________________________________
+-------------------------------------
+Enargado: Omar Rodrigo Talavera Becerra
+Colaboradores: Erick Noé Ramírez Olvera, Julián Hazael Martínez Hernández
+-------------------------------------
+
+__________________________
+Objetivo
+--------------------------
+Tener una visualización sobre el los datos obtenidos.
+Accesibilidad a estos datos.
+Visualización en tiempo real.
+Mostrar un layput de presentación para introducción al reto, asi como los diversos recursos del cliente
+
+_________________________
+Desarrollo
+-------------------------
+Estructura
+----------
+  ___________               ____________               ____________
+ |  -Robot-  |  --Datos--> | -DataBase- |  --Datos--> |  -Grafana- |
+ |-----------|             |------------|             |------------|
+
+Para dar un poco más de contexto y detalles. Utilizando credenciales de AWS se creo una EC2 (Elastic Compute Cloud), RDS (Relational Database Service) y Amplify, 
+como herramientas secundarias se utilizo, Grafana, Python y React.js, 
+El EC2 es una computadora virtual que podemos configurar para que contenga diferentes sistemas operativos y memoria, como su nombre lo indica, existe en la nube.
+El RDS de la misma forma, se configura al momento de su creación, en este caso se configuro con MySQL.
+Amplify es el servicio de AWS que permite instanciar front-end. En este caso creado con React.js.
+
+-----------------------
+Pasos:
+---------
+Primero se creo el EC2, una vez creada esta maquina, accedemos a su terminal e instalamos grafana, cliente de mysql y cliente de marie.
+Despues se crea el RDS configurado con MySQL y lo conectamos con el EC2.
+Configuramos los grupos de seguridad de ambas estancias para permitir el flujo de datos entre ellas y externas.
+Dentro de la terminal del EC2, creamos la configuracion de las tablas dentro del RDS.
+Para subir el front-end a Amplify unicamente se tiene que subir el build de la aplicacion de react a un repositorio de GitHub, las mismas herramientas de AWS te ayudaran a levantar el front-end.
+Creamos el scripit de python con las credenciales de acceso al RDS y unicamnete lo programamos para que realice un query de inyeccion de datos de manera cosntante.
+_______________________
+Resumen
+-----------------------
+El robot genera datos y los manda al RDS como un query de MySQL.
+Grafana es un visualizador de datos de OpenSource, por lo que se configura con querys personalizados y se conecta al RDS correspondiente.
+El EC2 funciona como terminal de administrador para Grafana y RDS.
+
+La aplicación web se creo con el objetivo de tener una mejor presentacion del priducto para el cliente. Esta contiene botones que redirecciona a los correspondientes perfiles de la compañia, un boton que inicia
+la presentación de los datos y por utimo un boton que redirecciona a la documentación, que vendria siendo exactamente este repositorio.
+______________________
+Costos
+----------------------
+Durante el desarrollo, pruebas y optimizacion de los recursos de AWS se genero una cantidad de 14.50 dolares.
+Por el uso y almacenamineto de los servicios de AWS por día sumaria una cantidad de 12.00 dolares por cada 24h en que los servicios se encuentren encendidos.
+Por la creacion del servicio se sumara la cantidad de 2,885.00 dolares
+Generando un pago para su trabajador de :  ------------------------------------------------------------------------------------- $2,899.5 dolares
+Mas un pago mensual y dependiendo del mantenimiento que se le de al almacenamiento de la base de datos: ------------------------ $360.00 dolares
+
