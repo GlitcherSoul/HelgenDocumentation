@@ -41,11 +41,11 @@ class sql(Node):
 	def timer_callback(self):
 		try:
 			connection = mysql.connector.connect(
-				host = 'helgedb.cjgw7hhcigld.us-east-1.rds.amazonaws.com',
-				port = 3306,
-				user = 'admin',
-				password = '49katkashi',
-				database='HelgenTable'
+				host = '***********************************',
+				port = *****,
+				user = '****************',
+				password = '**********',
+				database='*************'
 			)
 			cursor = connection.cursor()	
 			time = datetime.now()
