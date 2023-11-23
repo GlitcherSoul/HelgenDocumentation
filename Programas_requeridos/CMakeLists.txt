@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(gazebo_world_launch)
+project(basic_diffbot)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -16,13 +16,13 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 # find dependencies
-find_package(ament_cmake REQUIRED)
-find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
 
 find_package(rclpy REQUIRED)
 
@@ -31,9 +31,18 @@ ament_python_install_package(${PROJECT_NAME})
  
 # Install Python executables
 install(PROGRAMS
-  gazebo_world_launch/red.py
-  gazebo_world_launch/data.py
+  basic_diffbot/red.py
+  basic_diffbot/data.py
+  launch/gazebo_world.launch.py
   DESTINATION lib/${PROJECT_NAME}
+)
+
+install(DIRECTORY
+  launch
+  urdf
+  meshes
+  worlds
+  DESTINATION share/${PROJECT_NAME}/
 )
 
 ament_package()
