@@ -29,20 +29,21 @@ find_package(rclpy REQUIRED)
 # Install Python modules
 ament_python_install_package(${PROJECT_NAME})
  
+install(DIRECTORY
+  launch
+  urdf
+  meshes
+  worlds
+  basic_diffbot
+  DESTINATION share/${PROJECT_NAME}/
+)
+
 # Install Python executables
 install(PROGRAMS
   basic_diffbot/red.py
   basic_diffbot/data.py
   launch/gazebo_world.launch.py
   DESTINATION lib/${PROJECT_NAME}
-)
-
-install(DIRECTORY
-  launch
-  urdf
-  meshes
-  worlds
-  DESTINATION share/${PROJECT_NAME}/
 )
 
 ament_package()
