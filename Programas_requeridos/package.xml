@@ -34,6 +34,6 @@
   
   <export>
     <build_type>ament_cmake</build_type>
-    <gazebo_ros gazebo_model_path = "/home/<user_name>/proyect_ws/install/basic_diffbot/share/" />
+    <gazebo_ros gazebo_model_path = "/home/<user_name>/proyecto_ws/install/basic_diffbot/share/" />
   </export>
 </package>
