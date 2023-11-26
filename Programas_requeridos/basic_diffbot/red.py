@@ -21,7 +21,7 @@ class red(Node):
     self.br = CvBridge()
     
     #Obtencion de red neuronal
-    self.model = torch.hub.load('ultralytics/yolov5', 'custom', path = '/home/erick/proyect_ws/best.pt')
+    self.model = torch.hub.load('ultralytics/yolov5', 'custom', path = '/home/<user_name>/proyect_ws/best.pt')
     self.classes = self.model.names
     self.model.conf = 0.60
     
