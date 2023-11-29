@@ -56,7 +56,7 @@ class sql(Node):
 					VALUES(%s, %s, %s, %s, %s);
             			     '''
 			
-			data = self.x, self.y, self.x_vel, self.y_vel, self.z_vel
+			data = self.x, self.z, self.x_vel, self.y_vel, self.z_vel
 			#data = 0.1, 0.2
 			
 			try:
